@@ -1,33 +1,30 @@
 {
  "unit_id": "ch04-l04",
- "material_version": "v9",
- "status": "candidate",
- "revision": "r1",
- "base_commit": "e65e7d26ee33c760f0004c565c93496b603186c1",
- "rules_commit": "e65e7d26ee33c760f0004c565c93496b603186c1",
- "source_issue": 221,
- "distribution_issue": 3,
- "distribution_repository": "https://github.com/lecture-high-school-ai-team/ch04-04-materials",
- "previous_version": "v8",
- "scope": "取得先・操作案内・スライド2枚目の改訂。教材内容・アプリ・データ・写真・RGB・ベクトルは保持。",
- "excluded": [
-  "GitHub掲載手順.md"
- ],
+ "material_version": "v10",
+ "status": "approved",
+ "source_issue": 237,
+ "distribution_issue": 5,
+ "source_candidate_commit": "81dbbec9fa7352ef0d9940e87ba9ad348a7ca679",
+ "rules_commit": "5ac10b0f964238aca9b3000541a6180ec043158b",
+ "review_id": "ch04-l04-one-choice-exercise-20261114",
+ "review_revision": 1,
+ "confirmed_answer_sha256": "0bf4e8a062fbe69892133c4ba528984d1410e74826c01757b056d21efb0aec19",
+ "scope": "A〜Fから必須1課題、2つ目は発展。各課題とデータは継承。サンプルは承認済みMANAGEMENTの版同期のみ。",
  "publication_files": [
   {
-   "path": "4コマ_サンプルケース_まついわ観光案内_v9.ipynb",
-   "bytes": 9932,
-   "sha256": "eaa8d3b60b9d87d8457bde2fbcf584af3af2d638f84af28f3b9c792509a09988"
+   "path": "4コマ_サンプルケース_まついわ観光案内_v10.ipynb",
+   "bytes": 9933,
+   "sha256": "278ce1b8cd587dc27d3d30742475bb13f56af5b4f41f75589d886542f2f90ce4"
   },
   {
-   "path": "4コマ_演習ノートブック_課題解決の過程を追体験する_v9.ipynb",
-   "bytes": 1644649,
-   "sha256": "a5247d0cdee38c764cd29ac21697db4390a03144427fc892b6378dd7ce871ae8"
+   "path": "4コマ_演習ノートブック_課題解決の過程を追体験する_v10.ipynb",
+   "bytes": 1641847,
+   "sha256": "ffacc604994842a1b62786ae03da468ac255177b7caf88cb02b91cfb6e9d2449"
   },
   {
    "path": "README.md",
-   "bytes": 2870,
-   "sha256": "d77bd94ae0c231b6ffe03bb00cb44049cd5607ce91c85a2bfe72236ea7935e4d"
+   "bytes": 3074,
+   "sha256": "b4f98ef83f4d950ba85c4c81d24e63780ce71e3dd8ba441e2539f4f7931792a2"
   },
   {
    "path": "data/case.json",
@@ -89,5 +86,8 @@
    "bytes": 6805,
    "sha256": "1c2d583c3800c866fef13141f8c8459fe5841e5cacefe54bede35098d842dfe2"
   }
+ ],
+ "excluded": [
+  "GitHub掲載手順.md"
  ]
 }
