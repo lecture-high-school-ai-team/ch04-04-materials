@@ -1,0 +1,106 @@
+{
+  "unit_id": "ch04-l04",
+  "material_version": "v8",
+  "packaging_revision": "r1",
+  "date_jst": "2026-11-14",
+  "base_commit": "35c35f98db4c88a71181422989afdfef4e4ed07a",
+  "rules_commit": "35c35f98db4c88a71181422989afdfef4e4ed07a",
+  "issue": 214,
+  "workflow": "配布準備・既存ファイルの再梱包（教材改訂なし）",
+  "original_archive": "dist/v8/4コマ_配布セット_v8.zip",
+  "original_archive_sha256": "b3536c86b62fd5acf4b90756fa37a1fda6c24a27e59b9178acd224c8e5b41b53",
+  "original_tag": "ch04-l04-v8",
+  "material_content_changes": [],
+  "omitted_from_upload_package": [
+    "PowerPoint",
+    "PDF",
+    "旧ZIPのREADME（用途別の取得手順へ置換）"
+  ],
+  "notebook_initial_url": "元の固定タグの配布URLを保持。別の掲載先への切替は未実施。",
+  "publication": "非公開を継続。新しい公開・ライセンス付与は行っていません。",
+  "preserved_members": [
+    {
+      "path": "4コマ_サンプルケース_まついわ観光案内_v8.ipynb",
+      "bytes": 9999,
+      "sha256": "77e3b454d61000dea4017eaab429ca3f56eefd97c50a3e2ac4a004866ff36e4b"
+    },
+    {
+      "path": "4コマ_演習ノートブック_課題解決の過程を追体験する_v8.ipynb",
+      "bytes": 1645085,
+      "sha256": "7c44502d48e0c8d3a700d6e881f772c5f5866d495437bbeee67e6fb5504d627e"
+    },
+    {
+      "path": "data/case.json",
+      "bytes": 393570,
+      "sha256": "c69882ea5dc74c68aa9856939ab1394ab2fa4cee01cd3af4b708d99cbeb86043"
+    },
+    {
+      "path": "data/runtime_bundle.json",
+      "bytes": 419373,
+      "sha256": "2417b1da90a335854ad5230298c895ce12f4b249268b052c2248cafd0c265337"
+    },
+    {
+      "path": "data/search/provenance.json",
+      "bytes": 1822,
+      "sha256": "9ebdc6ce887a932892f826d0b373ed0804c526b68c54165cf865310ea9ba682f"
+    },
+    {
+      "path": "data/search/training_corpus.json",
+      "bytes": 14138,
+      "sha256": "9bc6631b4635c71d34a68a73966deda0de666fab30ba0ef6f0413bf681eb9a11"
+    },
+    {
+      "path": "data/search/word_vectors.json",
+      "bytes": 30210,
+      "sha256": "a5248f53347976b77ff538b75271822f6a39ab8b8e4b770c0dbab4f1c2ecad5d"
+    },
+    {
+      "path": "images/mascot.jpg",
+      "bytes": 365496,
+      "sha256": "7b7ac2987115c479ac6f6857264abeafa915269979def6907b8fa04dd6a57578"
+    },
+    {
+      "path": "images/other_mascot.jpg",
+      "bytes": 378331,
+      "sha256": "9eef8614cbc71cb2133a60bfefb8dc5c119262bb37aa3aea5198c03337f1abf7"
+    },
+    {
+      "path": "src/app.py",
+      "bytes": 11200,
+      "sha256": "c828d7157eec25051d9db1e4ed3be6749afae5f31d8238810840e46ec8e97045"
+    },
+    {
+      "path": "src/campaign_starter.py",
+      "bytes": 1559,
+      "sha256": "23768d6fe48feb25482f32a3c42a1670b9c83bc0de2f5d7f86957af20b07d5bf"
+    },
+    {
+      "path": "src/material_loader.py",
+      "bytes": 2481,
+      "sha256": "6a86715208a4776cd6f2551606b6e8d0e5c9a3936ff5d734ce53453962024beb"
+    },
+    {
+      "path": "src/photo_input.html",
+      "bytes": 2460,
+      "sha256": "792cb3732e85ce77575c19f08dd4698ec2f416baec2a3222a5c3b1c88d73b169"
+    },
+    {
+      "path": "src/train_search_vectors.py",
+      "bytes": 6805,
+      "sha256": "1c2d583c3800c866fef13141f8c8459fe5841e5cacefe54bede35098d842dfe2"
+    }
+  ],
+  "package_kind": "GitHub掲載用一式",
+  "added_documentation": [
+    {
+      "path": "README.md",
+      "bytes": 2870,
+      "sha256": "d77bd94ae0c231b6ffe03bb00cb44049cd5607ce91c85a2bfe72236ea7935e4d"
+    },
+    {
+      "path": "GitHub掲載手順.md",
+      "bytes": 4127,
+      "sha256": "81cdc543d1b659658dad0544c379054392b3220d4dbdbeacbc387c0e8bfd8576"
+    }
+  ]
+}
