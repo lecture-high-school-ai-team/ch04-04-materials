@@ -1,0 +1,67 @@
+name: repository-check
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify transferred v8 materials and upload layout
+        run: |
+          python - <<'PY'
+          import ast
+          import hashlib
+          import json
+          from pathlib import Path
+
+          root = Path('.')
+          record_name = '第4章_第4コマ_教材v8_配布元照合_r1.json'
+          raw = (root / record_name).read_bytes()
+          assert hashlib.sha256(raw).hexdigest() == '71546bd6974da9fbbb65b5790f2081a8f14bd6ee7a2505e9f342f69b3cc3bf12'
+          record = json.loads(raw)
+          assert record['unit_id'] == 'ch04-l04' and record['material_version'] == 'v8'
+          expected = {record_name, 'README.md', '.github/workflows/repository-check.yml'}
+          assert len(record['preserved_members']) == 14
+          for item in record['preserved_members']:
+              path = root / item['path']
+              data = path.read_bytes()
+              assert len(data) == item['bytes'], item['path']
+              assert hashlib.sha256(data).hexdigest() == item['sha256'], item['path']
+              expected.add(item['path'])
+              if path.suffix == '.py':
+                  ast.parse(data.decode('utf-8'))
+              if path.suffix == '.ipynb':
+                  notebook = json.loads(data)
+                  assert notebook['nbformat'] == 4 and len(data) <= 12_000_000
+                  for cell in notebook['cells']:
+                      if cell['cell_type'] == 'code':
+                          ast.parse(''.join(cell['source']))
+          readme = next(item for item in record['added_documentation'] if item['path'] == 'README.md')
+          assert hashlib.sha256((root / 'README.md').read_bytes()).hexdigest() == readme['sha256']
+          # The record describes the original upload ZIP. Its teacher guide was
+          # intentionally excluded from this repository by the user's instruction.
+          assert not (root / 'GitHub掲載手順.md').exists()
+          actual = {str(p) for p in root.rglob('*') if p.is_file() and '.git' not in p.parts}
+          assert actual == expected, (actual - expected, expected - actual)
+          assert (root / 'data').is_dir()
+          assert len(list(root.rglob('runtime_bundle.json'))) == 1
+          bundle = json.loads((root / 'data/runtime_bundle.json').read_text())
+          assert bundle['format'] == 'matsuiwa-materials-v0'
+          assert bundle['case'] == json.loads((root / 'data/case.json').read_text())
+          assert bundle['app_source'] == (root / 'src/app.py').read_text()
+          assert bundle['feature_source'] == (root / 'src/campaign_starter.py').read_text()
+          case = bundle['case']
+          assert (len(case['places']), len(case['reviews']), len(case['passes']), len(case['photos'])) == (8, 367, 4, 2)
+          model = json.loads((root / 'data/search/word_vectors.json').read_text())
+          assert model == case['search_model'] and model['dimensions'] == 32 and len(model['words']) == 88
+          assert all(len(photo['rgb']) == 3072 for photo in case['photos'].values())
+          print('Validated 16 transferred material files; teacher upload guide excluded; v8 bytes preserved.')
+          PY

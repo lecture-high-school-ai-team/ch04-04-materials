@@ -1,0 +1,41 @@
+{
+  "source": "本教材用の合成観光文から制作時に事前学習。第三者の学習済み重みは使用していません。",
+  "algorithm_reference": "Mikolov et al. (2013), Distributed Representations of Words and Phrases and their Compositionality, section 2.2.",
+  "reference_url": "https://arxiv.org/abs/1310.4546",
+  "implementation": "このリポジトリ用に作成したNumPy実装。外部実装のコードを転記していません。",
+  "redistribution": "第三者モデルの再配布条件はありません。新作の学習文・コード・数値の公開条件は本リポジトリの公開方針に従います。今回は非公開で、第4章完成後の公開判断を保留します。",
+  "seed": 260623,
+  "epochs": 180,
+  "dimensions": 32,
+  "negative_samples": 5,
+  "window": 2,
+  "words": 88,
+  "sentences": 341,
+  "training_pairs": 4774,
+  "training_loss": [
+    {
+      "epoch": 1,
+      "loss_per_pair": 3.8211944033911203
+    },
+    {
+      "epoch": 60,
+      "loss_per_pair": 1.0744138101401095
+    },
+    {
+      "epoch": 120,
+      "loss_per_pair": 1.0627695650087197
+    },
+    {
+      "epoch": 180,
+      "loss_per_pair": 1.0189015264429029
+    }
+  ],
+  "corpus_sha256": "9bc6631b4635c71d34a68a73966deda0de666fab30ba0ef6f0413bf681eb9a11",
+  "vectors_sha256": "a5248f53347976b77ff538b75271822f6a39ab8b8e4b770c0dbab4f1c2ecad5d",
+  "limitations": [
+    "合成の小規模語彙で、一般的な日本語の意味理解能力を評価するモデルではありません。",
+    "類似度は正解率・好みの確率ではありません。",
+    "未知語・否定・細かな条件や語順を扱う汎用の文章モデルではありません。",
+    "学習は制作時だけ。生徒は同梱表を読み、外部通信なしで計算します。"
+  ]
+}
