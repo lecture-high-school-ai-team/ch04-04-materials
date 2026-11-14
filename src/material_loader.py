@@ -1,4 +1,4 @@
-# GitHubから保存した配布セットZIPを、Colab／PyHirobaへ読み込みます。
+# GitHubから保存したZIPを、Colab／PyHirobaへ読み込みます。
 import io
 import json
 import zipfile
@@ -8,7 +8,7 @@ from google.colab import files
 def load_material_bundle(material_json):
     bundle = json.loads(material_json)
     if not isinstance(bundle, dict) or bundle.get("format") != "matsuiwa-materials-v0":
-        raise ValueError("この教材の配布セットを選んでください。")
+        raise ValueError("第4章4コマの教材のZIPを選んでください。")
     case = bundle["case"]
     app_source = bundle["app_source"]
     feature_source = bundle["feature_source"]
@@ -20,13 +20,13 @@ def load_material_bundle(material_json):
 
 def start_task(task="start"):
     if "CASE" not in globals():
-        raise RuntimeError("先に読込セルを実行し、配布セットZIPを選んでください。")
+        raise RuntimeError("先に読込セルを実行し、GitHubから保存したZIPを選んでください。")
     exec(APP_SOURCE, globals())
     exec(FEATURE_SOURCE, globals())
     return new_case(task)
 
 
-print("GitHubから保存した配布セットZIPを選んでください。")
+print("GitHubから保存したZIP（ch04-04-materials-main.zip）を1つ選んでください。")
 uploaded_materials = files.upload()
 if not uploaded_materials:
     material_result = ui.alert("ファイルが選ばれていません。もう一度このセルを実行してください。", kind="warning")
@@ -38,12 +38,12 @@ else:
                 names = [name for name in archive.namelist()
                          if name.replace("\\", "/").endswith("data/runtime_bundle.json")]
                 if len(names) != 1:
-                    raise ValueError("第4章4コマの配布セットZIPを選んでください。")
+                    raise ValueError("第4章4コマの教材のZIPを選んでください。")
                 # 必要なJSONだけを読みます。ZIP内のプログラムをファイルとして展開しません。
                 candidates.append(archive.read(names[0]).decode("utf-8-sig"))
         elif filename.endswith("runtime_bundle.json"):
             candidates.append(bytes(content).decode("utf-8-sig"))
     if len(candidates) != 1:
-        raise ValueError("配布セットZIPを1つだけ選んでください。")
+        raise ValueError("GitHubから保存したZIPを1つだけ選んでください。")
     material_result = load_material_bundle(candidates[0])
 material_result
