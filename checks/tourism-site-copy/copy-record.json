@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "date_jst": "2026-11-16",
+  "issue": 7,
+  "owner": "Codex",
+  "target_repository": "lecture-high-school-ai-team/ch04-04-materials",
+  "base_commit": "f218238d42c4b2a713c6f060a3a5abaf1c4386ed",
+  "rules_commit": "0d7b7f138a489bb80335036f8579cf0be365db32",
+  "source_repository": "funakoshi-takehiro/high-school-ai-4-test",
+  "source_commit": "3db25752a837e1603bb5216a13b0080564666808",
+  "source_pages_url": "https://funakoshi-takehiro.github.io/high-school-ai-4-test/",
+  "copy_method": "全3追跡ファイルをsite/へバイト単位でコピー。サイト内容の変更なし。",
+  "files": [
+    {
+      "source_path": "README.md",
+      "path": "site/README.md",
+      "bytes": 500,
+      "sha256": "5a4b1959013c4e0bb46c75799f6c4c6aa9717103b2e7439f8c4ec254a4b15a02"
+    },
+    {
+      "source_path": "index.html",
+      "path": "site/index.html",
+      "bytes": 41279,
+      "sha256": "ead803b7cc36f9a5539d3ecb04430a1396835763762e8b868d1499cfef34a75c"
+    },
+    {
+      "source_path": "style.css",
+      "path": "site/style.css",
+      "bytes": 4171,
+      "sha256": "a105e9edc9a6e91633fc8d42c4fa75f9d194bc2c31ed08a03b4605e20cae129e"
+    }
+  ],
+  "archive": {
+    "path": "downloads/まついわ町_観光ガイド.zip",
+    "bytes": 8806,
+    "sha256": "5f9fdbe6ed3c4df21f6923617cd033f430151778e89467d10d9d1abb99dc1255"
+  },
+  "original_readme": {
+    "bytes": 3074,
+    "sha256": "b4f98ef83f4d950ba85c4c81d24e63780ce71e3dd8ba441e2539f4f7931792a2"
+  },
+  "readme_append_heading": "\n## 第4章2・3コマの観光サイト\n",
+  "support_paths": [
+    "checks/tourism-site-copy/README.md",
+    "checks/tourism-site-copy/validate.py",
+    "checks/tourism-site-copy/browser_check.py",
+    "checks/tourism-site-copy/browser-result.json",
+    "checks/tourism-site-copy/pc.png",
+    "checks/tourism-site-copy/mobile.png"
+  ],
+  "visibility": "private",
+  "pages_enabled": false,
+  "lesson_notebook_versions_changed": false,
+  "references_not_switched": "既存2/3コマNotebook・スライド・QRと元サイトは今回変更していません。Web公開URLの切替はしていません。",
+  "self_audit": {
+    "date_jst": "2026-11-16",
+    "source_tracked_file_count": 3,
+    "all_source_files_copied_byte_identically": true,
+    "existing_files_byte_identical_except_appended_readme_and_ci": [
+      "4コマ_サンプルケース_まついわ観光案内_v10.ipynb",
+      "4コマ_演習ノートブック_課題解決の過程を追体験する_v10.ipynb",
+      "data/case.json",
+      "data/runtime_bundle.json",
+      "data/search/provenance.json",
+      "data/search/training_corpus.json",
+      "data/search/word_vectors.json",
+      "images/mascot.jpg",
+      "images/other_mascot.jpg",
+      "src/app.py",
+      "src/campaign_starter.py",
+      "src/material_loader.py",
+      "src/photo_input.html",
+      "src/train_search_vectors.py",
+      "第4章_第4コマ_教材v10_配布元照合.json"
+    ],
+    "root_readme_original_bytes_preserved": true,
+    "classroom_site_copy_content_unchanged": true,
+    "local_http_pc_mobile_pixels_identical": true,
+    "site_external_requests": 0,
+    "file_url_unverified": "管理環境でERR_BLOCKED_BY_ADMINISTRATOR。ローカルHTTP確認と区別。",
+    "source_and_visibility_unchanged": true,
+    "pending": "PR/main CI・リモート実ファイル再取得を統合後にIssue #7へ記録する。"
+  }
+}
