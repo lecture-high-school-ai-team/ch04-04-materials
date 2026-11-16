@@ -21,7 +21,6 @@ jobs:
           import hashlib
           import json
           from pathlib import Path
-          from runpy import run_path
           root = Path('.')
           name = '第4章_第4コマ_教材v10_配布元照合.json'
           raw = (root / name).read_bytes()
@@ -32,10 +31,6 @@ jobs:
           for item in record['publication_files']:
               path = root / item['path']
               data = path.read_bytes()
-              if item['path'] == 'README.md':
-                  # Preserve the approved v10 guide exactly; append the
-                  # separately verified entry for the copied tourism site.
-                  data = data[:item['bytes']]
               assert len(data) == item['bytes'], item['path']
               assert hashlib.sha256(data).hexdigest() == item['sha256'], item['path']
               expected.add(item['path'])
@@ -48,10 +43,7 @@ jobs:
                       text = ''.join(cell['source'])
                       if cell['cell_type'] == 'code': ast.parse(text)
                       assert 'high-school-ai/blob/ch04-l04-v8/' not in text
-          site_check = run_path('checks/tourism-site-copy/validate.py')
-          expected.update(site_check['validate'](root))
-          actual = {str(p) for p in root.rglob('*') if p.is_file() and '.git' not in p.parts and '__pycache__' not in p.parts}
-          assert actual == expected, (actual - expected, expected - actual)
+          assert {str(p) for p in root.rglob('*') if p.is_file() and '.git' not in p.parts} == expected
           assert not (root / 'GitHub掲載手順.md').exists()
           assert len(list(root.rglob('runtime_bundle.json'))) == 1
           bundle = json.loads((root / 'data/runtime_bundle.json').read_text())
@@ -62,5 +54,5 @@ jobs:
           case = bundle['case']
           assert (len(case['places']), len(case['reviews']), len(case['passes']), len(case['photos'])) == (8, 367, 4, 2)
           assert case['search_model'] == json.loads((root / 'data/search/word_vectors.json').read_text())
-          print('Validated unchanged v10 material, exact tourism-site copy, ZIP and distribution layout.')
+          print('Validated v10 Notebook, data, and distribution layout; teacher upload guide excluded.')
           PY
