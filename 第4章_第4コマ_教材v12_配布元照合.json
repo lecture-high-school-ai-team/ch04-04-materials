@@ -1,27 +1,27 @@
 {
  "unit_id": "ch04-l04",
- "material_version": "v11",
+ "material_version": "v12",
  "status": "user-authorized",
- "source_issue": 346,
- "base_commit": "2ae4c0682f54edddbce3f3f1c9a6daaae2978cac",
- "distribution_base_commit": "f6a8bdbb4b4764c39e6391f3a8e839e4468cadac",
+ "source_issue": 352,
+ "distribution_issue": 13,
+ "base_commit": "b736d43b899f84056d27e247c1d67c976b794b88",
  "approval_type": "explicit-user-instruction",
- "scope": "演習Notebook開始手順の重複する開き方案内を削除し、後続番号を繰り上げる。サンプルは版metadataのみ同期。",
+ "scope": "一覧は初期5件で件数/allを編集可能。準備と読込をhide付き1セルへ統合。関連案内・説明図を同期。",
  "publication_files": [
   {
-   "path": "4コマ_サンプルケース_まついわ観光案内_v11.ipynb",
-   "bytes": 9933,
-   "sha256": "52d7a1633ba0054f68d1a821b0f326705fd80cd6422ab7d6ce5d7c8a1d38680d"
+   "path": "4コマ_サンプルケース_まついわ観光案内_v12.ipynb",
+   "bytes": 10246,
+   "sha256": "ef0f087dbdf189a876053d157bbd88e390a6349a20a77fd84b21e52092fd0418"
   },
   {
-   "path": "4コマ_演習ノートブック_課題解決の過程を追体験する_v11.ipynb",
-   "bytes": 1641448,
-   "sha256": "d105b71c16e9dc8792b12e6e2795f73d66b9df58d11eecbe542346c6153219be"
+   "path": "4コマ_演習ノートブック_課題解決の過程を追体験する_v12.ipynb",
+   "bytes": 1608245,
+   "sha256": "0c2850877bfe51dd7e0fb881e42cf0586fa8e86094e37185263b8047a34f753a"
   },
   {
    "path": "README.md",
-   "bytes": 3074,
-   "sha256": "b4f98ef83f4d950ba85c4c81d24e63780ce71e3dd8ba441e2539f4f7931792a2"
+   "bytes": 3418,
+   "sha256": "f724630fad34a1262a049d64908b0e559502efde53938f21b67858e89e208ad5"
   },
   {
    "path": "data/case.json",
@@ -30,8 +30,8 @@
   },
   {
    "path": "data/runtime_bundle.json",
-   "bytes": 419373,
-   "sha256": "2417b1da90a335854ad5230298c895ce12f4b249268b052c2248cafd0c265337"
+   "bytes": 420185,
+   "sha256": "5ec5f5df58fc444564a61a5d81af0057baeb805c97731b472c47719d6362dba0"
   },
   {
    "path": "data/search/provenance.json",
@@ -60,8 +60,8 @@
   },
   {
    "path": "src/app.py",
-   "bytes": 11200,
-   "sha256": "c828d7157eec25051d9db1e4ed3be6749afae5f31d8238810840e46ec8e97045"
+   "bytes": 11962,
+   "sha256": "e10a31d83139bc121d36e952018b2a5df95e96aec0492439d799b0882f074b9c"
   },
   {
    "path": "src/campaign_starter.py",
