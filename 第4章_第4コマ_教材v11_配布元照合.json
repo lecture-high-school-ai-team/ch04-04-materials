@@ -1,25 +1,22 @@
 {
  "unit_id": "ch04-l04",
- "material_version": "v10",
- "status": "approved",
- "source_issue": 237,
- "distribution_issue": 5,
- "source_candidate_commit": "81dbbec9fa7352ef0d9940e87ba9ad348a7ca679",
- "rules_commit": "5ac10b0f964238aca9b3000541a6180ec043158b",
- "review_id": "ch04-l04-one-choice-exercise-20261114",
- "review_revision": 1,
- "confirmed_answer_sha256": "0bf4e8a062fbe69892133c4ba528984d1410e74826c01757b056d21efb0aec19",
- "scope": "A〜Fから必須1課題、2つ目は発展。各課題とデータは継承。サンプルは承認済みMANAGEMENTの版同期のみ。",
+ "material_version": "v11",
+ "status": "user-authorized",
+ "source_issue": 346,
+ "base_commit": "2ae4c0682f54edddbce3f3f1c9a6daaae2978cac",
+ "distribution_base_commit": "f6a8bdbb4b4764c39e6391f3a8e839e4468cadac",
+ "approval_type": "explicit-user-instruction",
+ "scope": "演習Notebook開始手順の重複する開き方案内を削除し、後続番号を繰り上げる。サンプルは版metadataのみ同期。",
  "publication_files": [
   {
-   "path": "4コマ_サンプルケース_まついわ観光案内_v10.ipynb",
+   "path": "4コマ_サンプルケース_まついわ観光案内_v11.ipynb",
    "bytes": 9933,
-   "sha256": "278ce1b8cd587dc27d3d30742475bb13f56af5b4f41f75589d886542f2f90ce4"
+   "sha256": "52d7a1633ba0054f68d1a821b0f326705fd80cd6422ab7d6ce5d7c8a1d38680d"
   },
   {
-   "path": "4コマ_演習ノートブック_課題解決の過程を追体験する_v10.ipynb",
-   "bytes": 1641847,
-   "sha256": "ffacc604994842a1b62786ae03da468ac255177b7caf88cb02b91cfb6e9d2449"
+   "path": "4コマ_演習ノートブック_課題解決の過程を追体験する_v11.ipynb",
+   "bytes": 1641448,
+   "sha256": "d105b71c16e9dc8792b12e6e2795f73d66b9df58d11eecbe542346c6153219be"
   },
   {
    "path": "README.md",
