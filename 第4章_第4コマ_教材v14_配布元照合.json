@@ -1,19 +1,23 @@
 {
  "unit_id": "ch04-l04",
- "material_version": "v13",
- "source_issue": 357,
- "distribution_issue": 15,
+ "material_version": "v14",
+ "status": "user-authorized",
+ "source_issue": 366,
+ "distribution_issue": 17,
+ "base_commit": "b46e84986a6fd635cf3bad2a5f8cb7420d476c7e",
+ "distribution_base_commit": "1730d6136ce6008c3a13bd969d842f2a9560f6e5",
  "approval_type": "explicit-user-instruction",
+ "scope": "採用済み確認文・観察欄と指定6記入案内。プログラム・データ・画像は保持。",
  "publication_files": [
   {
-   "path": "4コマ_サンプルケース_まついわ観光案内_v13.ipynb",
+   "path": "4コマ_サンプルケース_まついわ観光案内_v14.ipynb",
    "bytes": 10269,
-   "sha256": "261297760d1491b435ae8e42b2da160ef85a266ae409336604e726c4e85adb23"
+   "sha256": "836c58e46a536f6e493c1ccb90f73dce950e7657c919c34b052cc2c0d3adbda5"
   },
   {
-   "path": "4コマ_演習ノートブック_課題解決の過程を追体験する_v13.ipynb",
-   "bytes": 1607636,
-   "sha256": "be3341c8dd249b1a5e6e6873b28eb8e63b981ea4c69955b363109a786bd361af"
+   "path": "4コマ_演習ノートブック_課題解決の過程を追体験する_v14.ipynb",
+   "bytes": 1612007,
+   "sha256": "a86f78aee4eefcd6551859908933a47972fdbcabe4d112a8c631766abb533b97"
   },
   {
    "path": "README.md",
