@@ -8,6 +8,19 @@ from collections import Counter
 from library_hiroba import ui
 
 
+def preview_table(rows, headers, limit=5):
+    """表示件数だけを変えます。元のデータや並び順は変えません。"""
+    rows = list(rows)
+    if isinstance(limit, str) and limit.strip().lower() == "all":
+        shown = rows
+    elif type(limit) is int and limit > 0:
+        shown = rows[:limit]
+    else:
+        raise ValueError('表示件数は1以上の整数、または "all" にしてください。')
+    return ui.table(shown, headers=headers,
+                    caption=f"全{len(rows)}件のうち先頭{len(shown)}件を表示しています。")
+
+
 class Matsuiwa:
     def __init__(self, data, task="start"):
         self.data = copy.deepcopy(data)
@@ -45,7 +58,7 @@ class Matsuiwa:
             """,
         )
 
-    def detail(self, place):
+    def detail(self, place, limit=5):
         selected = next(p for p in self.data["places"] if p["name"] == place)
         if self.bugs:
             selected = self.data["places"][0]
@@ -54,21 +67,21 @@ class Matsuiwa:
         rows = sorted(rows, key=lambda r: r["date"], reverse=True)
         return ui.stack(
             ui.card(selected["name"], selected["intro"]),
-            ui.table([[r["id"], r["date"], r["rating"], r["text"]] for r in rows],
-                     headers=["口コミID", "日付", "評価", "口コミ"]),
+            preview_table([[r["id"], r["date"], r["rating"], r["text"]] for r in rows],
+                          headers=["口コミID", "日付", "評価", "口コミ"], limit=limit),
         )
 
-    def browse_form(self):
-        return ui.form(self.detail,
+    def browse_form(self, limit=5):
+        return ui.form(lambda place: self.detail(place, limit=limit),
             ui.field("place", "施設を選択", kind="choice",
                      choices=[p["name"] for p in self.data["places"]]),
             submit_label="口コミを表示", clear_on_submit=False)
 
-    def all_reviews(self):
+    def all_reviews(self, limit=5):
         names = {p["id"]: p["name"] for p in self.data["places"]}
         rows = sorted(self.data["reviews"], key=lambda r:r["date"], reverse=True)
-        return ui.table([[r["id"],names[r["place_id"]],r["rating"],r["text"]] for r in rows],
-                        headers=["口コミID","施設","評価","口コミ"])
+        return preview_table([[r["id"],names[r["place_id"]],r["rating"],r["text"]] for r in rows],
+                             headers=["口コミID","施設","評価","口コミ"], limit=limit)
 
     def review(self, place, rating, text):
         selected = next(p for p in self.data["places"] if p["name"] == place)
@@ -116,16 +129,16 @@ class Matsuiwa:
             return []
         return [place for place in self.data["places"] if query in place_text(place)]
 
-    def keyword_search(self, query):
+    def keyword_search(self, query, limit=5):
         if not str(query).strip():
             return ui.alert("探したい言葉を入力してください。", kind="warning")
         rows = self.keyword_matches(query)
         if not rows:
             return ui.alert("入力した文字列を含む施設紹介はありませんでした。")
-        return ui.table([[p["name"], p["intro"]] for p in rows], headers=["施設", "紹介文"])
+        return preview_table([[p["name"], p["intro"]] for p in rows], headers=["施設", "紹介文"], limit=limit)
 
-    def keyword_form(self):
-        return ui.form(self.keyword_search,
+    def keyword_form(self, limit=5):
+        return ui.form(lambda query: self.keyword_search(query, limit=limit),
             ui.field("query", "探したい言葉", default="休息"),
             submit_label="文字の一致で探す", clear_on_submit=False)
 
