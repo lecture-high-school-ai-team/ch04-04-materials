@@ -1,27 +1,24 @@
 {
  "unit_id": "ch04-l04",
- "material_version": "v12",
- "status": "user-authorized",
- "source_issue": 352,
- "distribution_issue": 13,
- "base_commit": "b736d43b899f84056d27e247c1d67c976b794b88",
+ "material_version": "v13",
+ "source_issue": 357,
+ "distribution_issue": 15,
  "approval_type": "explicit-user-instruction",
- "scope": "一覧は初期5件で件数/allを編集可能。準備と読込をhide付き1セルへ統合。関連案内・説明図を同期。",
  "publication_files": [
   {
-   "path": "4コマ_サンプルケース_まついわ観光案内_v12.ipynb",
-   "bytes": 10246,
-   "sha256": "ef0f087dbdf189a876053d157bbd88e390a6349a20a77fd84b21e52092fd0418"
+   "path": "4コマ_サンプルケース_まついわ観光案内_v13.ipynb",
+   "bytes": 10269,
+   "sha256": "261297760d1491b435ae8e42b2da160ef85a266ae409336604e726c4e85adb23"
   },
   {
-   "path": "4コマ_演習ノートブック_課題解決の過程を追体験する_v12.ipynb",
-   "bytes": 1608245,
-   "sha256": "0c2850877bfe51dd7e0fb881e42cf0586fa8e86094e37185263b8047a34f753a"
+   "path": "4コマ_演習ノートブック_課題解決の過程を追体験する_v13.ipynb",
+   "bytes": 1607636,
+   "sha256": "be3341c8dd249b1a5e6e6873b28eb8e63b981ea4c69955b363109a786bd361af"
   },
   {
    "path": "README.md",
-   "bytes": 3418,
-   "sha256": "f724630fad34a1262a049d64908b0e559502efde53938f21b67858e89e208ad5"
+   "bytes": 3551,
+   "sha256": "000efbe115ebb12e08c6b3bdc9a1cd742648eccb0f6ae1a87f43cfa3cbc40bcd"
   },
   {
    "path": "data/case.json",
@@ -83,8 +80,5 @@
    "bytes": 6805,
    "sha256": "1c2d583c3800c866fef13141f8c8459fe5841e5cacefe54bede35098d842dfe2"
   }
- ],
- "excluded": [
-  "GitHub掲載手順.md"
  ]
 }
