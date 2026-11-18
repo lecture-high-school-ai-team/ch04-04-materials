@@ -22,11 +22,11 @@ jobs:
           import json
           from pathlib import Path
           root = Path('.')
-          name = '第4章_第4コマ_教材v13_配布元照合.json'
+          name = '第4章_第4コマ_教材v14_配布元照合.json'
           raw = (root / name).read_bytes()
-          assert hashlib.sha256(raw).hexdigest() == '70f6aff6ec37bf0f3ee66fa42195854efac5e0362726bf53afbed51be2828be2'
+          assert hashlib.sha256(raw).hexdigest() == 'd13b2b1f63b4136644692de821596b950dc8ffb64108142caf6a44b926928feb'
           record = json.loads(raw)
-          assert record['unit_id'] == 'ch04-l04' and record['material_version'] == 'v13'
+          assert record['unit_id'] == 'ch04-l04' and record['material_version'] == 'v14'
           expected = {name, '.github/workflows/repository-check.yml'}
           for item in record['publication_files']:
               path = root / item['path']
@@ -38,7 +38,7 @@ jobs:
               if path.suffix == '.ipynb':
                   notebook = json.loads(data)
                   assert notebook['nbformat'] == 4 and len(data) <= 12_000_000
-                  assert notebook['metadata']['lesson']['version'] == 13
+                  assert notebook['metadata']['lesson']['version'] == 14
                   for cell in notebook['cells']:
                       text = ''.join(cell['source'])
                       if cell['cell_type'] == 'code': ast.parse(text)
@@ -54,5 +54,5 @@ jobs:
           case = bundle['case']
           assert (len(case['places']), len(case['reviews']), len(case['passes']), len(case['photos'])) == (8, 367, 4, 2)
           assert case['search_model'] == json.loads((root / 'data/search/word_vectors.json').read_text())
-          print('Validated v13 Notebook, data, and distribution layout; teacher upload guide excluded.')
+          print('Validated v14 Notebook, data, and distribution layout; teacher upload guide excluded.')
           PY
